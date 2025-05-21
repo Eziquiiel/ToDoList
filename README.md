@@ -21,5 +21,3 @@ Uma Api simples de listas de tarefas
 
 - Criar um usuário
 - Fazer um login
-
-# Endpoints

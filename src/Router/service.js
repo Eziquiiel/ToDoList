@@ -12,14 +12,14 @@ const filterTask = require("../Controller/Task/filterTask");
 
 //User
 router.post("/", (req, res) => registerController.register(req, res));
-router.post("/login", token, (req, res) => loginController(req, res));
+router.post("/login", (req, res) => loginController(req, res));
 
 //Task
-router.post("/task", (req, res) => createTask.create(req, res));
-router.get("/tasks", (req, res) => getTask.get(req, res));
-router.get("/task/filter", (req, res) => filterTask(req, res));
-router.get("/task/:id", (req, res) => getIDTask(req, res));
-router.put("/task/:id", (req, res) => putTask(req, res));
-router.delete("/task/:id", (req, res) => deleteTask(req, res));
+router.post("/task", token, (req, res) => createTask.create(req, res));
+router.get("/tasks", token, (req, res) => getTask.get(req, res));
+router.get("/task/filter", token, (req, res) => filterTask(req, res));
+router.get("/task/:id", token, (req, res) => getIDTask(req, res));
+router.put("/task/:id", token, (req, res) => putTask(req, res));
+router.delete("/task/:id", token, (req, res) => deleteTask(req, res));
 
 module.exports = router;
